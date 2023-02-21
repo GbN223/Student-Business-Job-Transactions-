@@ -1,0 +1,471 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{776EAA66-293E-47E8-8459-BD4559749042}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NCKH</RootNamespace>
+    <AssemblyName>NCKH</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44359</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.19.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.19.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.1.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.6.1.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\HK_III_2022\NCKH\NCKH\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CKHOA_TB.aspx" />
+    <Content Include="CNDOANHNGHIEP_DANGBAI.aspx" />
+    <Content Include="CNDOANHNGHIEP_DUYETSV.aspx" />
+    <Content Include="CNDOANHNGHIEP_TTSV.aspx" />
+    <Content Include="CNGIANGVIEN_HDTT.aspx" />
+    <Content Include="CNGIANGVIEN_TTSV.aspx" />
+    <Content Include="CNKHOACTTB.aspx" />
+    <Content Include="CNKHOA_CTTB.aspx" />
+    <Content Include="CNKHOA_DN.aspx" />
+    <Content Include="CNKHOA_DNTTCT.aspx" />
+    <Content Include="CNKhoa_Giangvien.aspx" />
+    <Content Include="CNKhoa_GVTTCT.aspx" />
+    <Content Include="CNKHOA_QLTT.aspx" />
+    <Content Include="CNSinhvien_Chongv.aspx" />
+    <Content Include="CNSinhvien_Dangkydn.aspx" />
+    <Content Include="CNXEMTB.aspx" />
+    <Content Include="css\CNDOANHNGHIEP_DUYETSV.css" />
+    <Content Include="css\CNKhoa_Master.css" />
+    <Content Include="css\CNSinhvien_Chongv.css" />
+    <Content Include="css\CNSinhvien_Master.css" />
+    <Content Include="css\Enterprise.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\Style-CNGVHDTT.css" />
+    <Content Include="css\Style-CNKHOAQLTT.css" />
+    <Content Include="css\Style-GV.css" />
+    <Content Include="css\Style-GVMasterPage.css" />
+    <Content Include="css\Style-KHOA_DN.css" />
+    <Content Include="css\Style-KHOA_TB.css" />
+    <Content Include="Demo.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\AIKING.png" />
+    <Content Include="Image\Bangdiem.jpg" />
+    <Content Include="Image\bannerDN.png" />
+    <Content Include="Image\Bravo.png" />
+    <Content Include="Image\Crowded.png" />
+    <Content Include="Image\DN001_YOOT.png" />
+    <Content Include="Image\DN002_TMA.png" />
+    <Content Include="Image\DN003_DOTB.png" />
+    <Content Include="Image\DN004_MISA.png" />
+    <Content Include="Image\DN005_SOFTDREAMS.png" />
+    <Content Include="Image\DN006_FAST.png" />
+    <Content Include="Image\DN007_FPT.png" />
+    <Content Include="Image\DN008_HPT.png" />
+    <Content Include="Image\DN009_DXC.png" />
+    <Content Include="Image\DN010_ROSY.png" />
+    <Content Include="Image\DN011_FUELCLOUD.png" />
+    <Content Include="Image\DN012_INNOVATION.png" />
+    <Content Include="Image\DN013_SOFTEKSOLUTION.png" />
+    <Content Include="Image\DN014_AIKING.png" />
+    <Content Include="Image\DN015_BRAVO.png" />
+    <Content Include="Image\DN016_FUJINET.jpg" />
+    <Content Include="Image\DN017_GLOBAL.png" />
+    <Content Include="Image\DN018_INTEL.png" />
+    <Content Include="Image\DN019_VNG.png" />
+    <Content Include="Image\DN020_BOSCHRE.png" />
+    <Content Include="Image\DN021_VIETTEL.png" />
+    <Content Include="Image\DN022_MAYTECH.jpg" />
+    <Content Include="Image\DN023_KMS.png" />
+    <Content Include="Image\DN024_TRANS.png" />
+    <Content Include="Image\DN025_AXON.png" />
+    <Content Include="Image\DN026_TINHVAN.jpg" />
+    <Content Include="Image\DN027_NASHTECH.png" />
+    <Content Include="Image\DN028_IPOS.png" />
+    <Content Include="Image\DN029_NAVI.png" />
+    <Content Include="Image\DN030_EXPERTSEE.png" />
+    <Content Include="Image\DN031_FABA.png" />
+    <Content Include="Image\DN032_KITE.png" />
+    <Content Include="Image\DN033_RIKKEISOFT.png" />
+    <Content Include="Image\DN034_GOFINGO.png" />
+    <Content Include="Image\DN035_SHIFTASIA.png" />
+    <Content Include="Image\DOTB.jpg" />
+    <Content Include="Image\DXC.png" />
+    <Content Include="Image\FAST.jpg" />
+    <Content Include="Image\fast.png" />
+    <Content Include="Image\FPT.jpg" />
+    <Content Include="Image\FPT.png" />
+    <Content Include="Image\FptSoftware.png" />
+    <Content Include="Image\FUELCLOUD.png" />
+    <Content Include="Image\GV001_NGUYENTHANHCONG.png" />
+    <Content Include="Image\GV002_VUTHITHANHHUONG.jpg" />
+    <Content Include="Image\GV003_TONTHATHOAAN.png" />
+    <Content Include="Image\GV004_THANHBINH.jpg" />
+    <Content Include="Image\GV005_TRUONGXUANHUONG.jpg" />
+    <Content Include="Image\GV006_LAMHOANGTRUCMAI.jpg" />
+    <Content Include="Image\GV007_THUYNGUYET.jpg" />
+    <Content Include="Image\GV008_THANHSAN.jpg" />
+    <Content Include="Image\GV009_ANHSON.jpg" />
+    <Content Include="Image\GV010QUOCTHANH.jpg" />
+    <Content Include="Image\GV011_XUANTHE.jpg" />
+    <Content Include="Image\GV012_KIMTHOA.jpg" />
+    <Content Include="Image\GV013_THANHTRUNG.png" />
+    <Content Include="Image\GV014_THANHTRUONG.jpg" />
+    <Content Include="Image\GV015_THUYTU.jpg" />
+    <Content Include="Image\hp-01.jpg" />
+    <Content Include="Image\hp.jpg" />
+    <Content Include="Image\HPT.jpg" />
+    <Content Include="Image\icons8_Available_Updates_40px.png" />
+    <Content Include="Image\icons8_edit_profile_30px.png" />
+    <Content Include="Image\icons8_map_editing_40px_1.png" />
+    <Content Include="Image\icons8_notification_30px.png" />
+    <Content Include="Image\icons8_search_30px.png" />
+    <Content Include="Image\icons8_search_40px.png" />
+    <Content Include="Image\icons8_user_30px.png" />
+    <Content Include="Image\icons8_waste_40px_2.png" />
+    <Content Include="Image\INNOVATION.png" />
+    <Content Include="Image\KhaiVy.jpg" />
+    <Content Include="Image\LHTM.png" />
+    <Content Include="Image\Logo.png" />
+    <Content Include="Image\logodn.png" />
+    <Content Include="Image\logo_CNTT.png" />
+    <Content Include="Image\logo_TB.png" />
+    <Content Include="Image\MinhThu.jpg" />
+    <Content Include="Image\Misa.jpg" />
+    <Content Include="Image\misa.png" />
+    <Content Include="Image\noti.png" />
+    <Content Include="Image\Phuoc.jpg" />
+    <Content Include="Image\ROSY.png" />
+    <Content Include="Image\search.png" />
+    <Content Include="Image\SoftDream.jpg" />
+    <Content Include="Image\softdream.png" />
+    <Content Include="Image\SOFTEKSOLUTIONS.png" />
+    <Content Include="Image\Theme.png" />
+    <Content Include="Image\Thongtintd.png" />
+    <Content Include="Image\tick.png" />
+    <Content Include="Image\TMA.png" />
+    <Content Include="Image\TTC.png" />
+    <Content Include="Image\UFM.png" />
+    <Content Include="Image\user %281%29.png" />
+    <Content Include="Image\user.png" />
+    <Content Include="Image\VTTH.png" />
+    <Content Include="Image\warning-01.png" />
+    <Content Include="Image\YOOT.png" />
+    <Content Include="js\login.js" />
+    <Content Include="LoginForm.aspx" />
+    <Content Include="NCKHKETNOI_1HomePageBeforeLogin.aspx" />
+    <Content Include="NCKHKETNOI_3DANGYEUCAUTHUCTAP.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CKHOA_TB.aspx.cs">
+      <DependentUpon>CKHOA_TB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CKHOA_TB.aspx.designer.cs">
+      <DependentUpon>CKHOA_TB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNDOANHNGHIEP_DANGBAI.aspx.cs">
+      <DependentUpon>CNDOANHNGHIEP_DANGBAI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNDOANHNGHIEP_DANGBAI.aspx.designer.cs">
+      <DependentUpon>CNDOANHNGHIEP_DANGBAI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNDOANHNGHIEP_DUYETSV.aspx.cs">
+      <DependentUpon>CNDOANHNGHIEP_DUYETSV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNDOANHNGHIEP_DUYETSV.aspx.designer.cs">
+      <DependentUpon>CNDOANHNGHIEP_DUYETSV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNDOANHNGHIEP_TTSV.aspx.cs">
+      <DependentUpon>CNDOANHNGHIEP_TTSV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNDOANHNGHIEP_TTSV.aspx.designer.cs">
+      <DependentUpon>CNDOANHNGHIEP_TTSV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNGIANGVIEN.Master.cs">
+      <DependentUpon>CNGIANGVIEN.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNGIANGVIEN.Master.designer.cs">
+      <DependentUpon>CNGIANGVIEN.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CNGIANGVIEN_HDTT.aspx.cs">
+      <DependentUpon>CNGIANGVIEN_HDTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNGIANGVIEN_HDTT.aspx.designer.cs">
+      <DependentUpon>CNGIANGVIEN_HDTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNGIANGVIEN_TTSV.aspx.cs">
+      <DependentUpon>CNGIANGVIEN_TTSV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNGIANGVIEN_TTSV.aspx.designer.cs">
+      <DependentUpon>CNGIANGVIEN_TTSV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKHOACTTB.aspx.cs">
+      <DependentUpon>CNKHOACTTB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKHOACTTB.aspx.designer.cs">
+      <DependentUpon>CNKHOACTTB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKHOA_CTTB.aspx.cs">
+      <DependentUpon>CNKHOA_CTTB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKHOA_CTTB.aspx.designer.cs">
+      <DependentUpon>CNKHOA_CTTB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKHOA_DN.aspx.cs">
+      <DependentUpon>CNKHOA_DN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKHOA_DN.aspx.designer.cs">
+      <DependentUpon>CNKHOA_DN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKHOA_DNTTCT.aspx.cs">
+      <DependentUpon>CNKHOA_DNTTCT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKHOA_DNTTCT.aspx.designer.cs">
+      <DependentUpon>CNKHOA_DNTTCT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKhoa_Giangvien.aspx.cs">
+      <DependentUpon>CNKhoa_Giangvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKhoa_Giangvien.aspx.designer.cs">
+      <DependentUpon>CNKhoa_Giangvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKhoa_GVTTCT.aspx.cs">
+      <DependentUpon>CNKhoa_GVTTCT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKhoa_GVTTCT.aspx.designer.cs">
+      <DependentUpon>CNKhoa_GVTTCT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNKhoa_Master.Master.cs">
+      <DependentUpon>CNKhoa_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKhoa_Master.Master.designer.cs">
+      <DependentUpon>CNKhoa_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CNKHOA_QLTT.aspx.cs">
+      <DependentUpon>CNKHOA_QLTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNKHOA_QLTT.aspx.designer.cs">
+      <DependentUpon>CNKHOA_QLTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNSinhvien_Chongv.aspx.cs">
+      <DependentUpon>CNSinhvien_Chongv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNSinhvien_Chongv.aspx.designer.cs">
+      <DependentUpon>CNSinhvien_Chongv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNSinhvien_Dangkydn.aspx.cs">
+      <DependentUpon>CNSinhvien_Dangkydn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNSinhvien_Dangkydn.aspx.designer.cs">
+      <DependentUpon>CNSinhvien_Dangkydn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CNSinhvien_Master.Master.cs">
+      <DependentUpon>CNSinhvien_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNSinhvien_Master.Master.designer.cs">
+      <DependentUpon>CNSinhvien_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CNXEMTB.aspx.cs">
+      <DependentUpon>CNXEMTB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CNXEMTB.aspx.designer.cs">
+      <DependentUpon>CNXEMTB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.aspx.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo.aspx.designer.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoanhNghiep_Master.Master.cs">
+      <DependentUpon>DoanhNghiep_Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoanhNghiep_Master.Master.designer.cs">
+      <DependentUpon>DoanhNghiep_Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.Master.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.Master.designer.cs">
+      <DependentUpon>HomePage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.aspx.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginForm.aspx.designer.cs">
+      <DependentUpon>LoginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="NCKHKETNOI_1HomePageBeforeLogin.aspx.cs">
+      <DependentUpon>NCKHKETNOI_1HomePageBeforeLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCKHKETNOI_1HomePageBeforeLogin.aspx.designer.cs">
+      <DependentUpon>NCKHKETNOI_1HomePageBeforeLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NCKHKETNOI_3DANGYEUCAUTHUCTAP.aspx.cs">
+      <DependentUpon>NCKHKETNOI_3DANGYEUCAUTHUCTAP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NCKHKETNOI_3DANGYEUCAUTHUCTAP.aspx.designer.cs">
+      <DependentUpon>NCKHKETNOI_3DANGYEUCAUTHUCTAP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CNKhoa_Master.Master" />
+    <Content Include="HomePage.Master" />
+    <Content Include="CNGIANGVIEN.Master" />
+    <Content Include="CNSinhvien_Master.Master" />
+    <Content Include="DoanhNghiep_Master.Master" />
+    <Content Include="Fonts\DejaVuSans.ttf" />
+    <Content Include="Fonts\arial-unicode-ms.ttf" />
+    <Content Include="Fonts\Microsoft Sans Serif.ttf" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51508</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44359/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

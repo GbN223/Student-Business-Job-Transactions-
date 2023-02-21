@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DoanhNghiep_Master.master.cs" Inherits="NVCK.DoanhNghiep_Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+     <link rel="stylesheet" type="text/css" href="css/Enterprise.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body style="overflow-x:hidden">
+    <form id="form1" runat="server">
+      <div style="border-bottom-color:#C6C9CE" class="header">
+      <nav class="nav">
+        <div class="logo">
+          <img src="Image/Logo.png" width="70" />
+          <a class="SpanUFM" href="Trangchu.html">UFM KẾT NỐI</a>
+        </div>
+        <div class="menu">
+          <ul>
+            <li >
+              <a id="Menu" href="Recruitment.html">Đăng bài tuyển dụng</a>
+            </li>
+            <li>
+              <a id="Menu" href="frmFacultyNotification.html">Hồ sơ thực tập</a>
+            </li>
+              <li></li>
+          </ul>
+        </div>
+        <div style="display: flex">
+          <a href="#"
+            ><button><img src="Image/noti.png" width="37" /></button
+          ></a>
+          <div class="dropdown">
+            <button class="dropbtn">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logodn.png" Width="35px" />
+            </button>
+            <div class="dropdown-content">
+              <a href="IPersonal.html">Hồ sơ cá nhân </a>
+              <a href="LoginForm.aspx">Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

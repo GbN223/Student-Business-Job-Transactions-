@@ -1,0 +1,12 @@
+﻿body {
+}
+.button-duyet {
+    width: 150px;
+    height: 40px;
+    border-style: none;
+    background: #22468E;
+    border-radius: 20px;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer
+}

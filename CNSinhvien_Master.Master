@@ -1,0 +1,59 @@
+﻿    <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CNSinhvien_Master.Master.cs" Inherits="NCKH.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+     <LINK REL=StyleSheet HREF="css/CNSinhvien_Master.css" TYPE="text/css" >
+    <link href="https://fonts.googleapis.com/css2?family=Bungee" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+      
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <nav class="nav">
+              <div class="logo">
+                <img width="40px" height="40px" src="Image\Logo.png" />
+                <a class="SpanUFM" href="Trangchu.html">UFM KẾT NỐI</a>
+              </div>
+              <div class="menu">
+                <ul>
+                  <li >
+                    <a id="Menu" href="CNSinhvien_Dangkydn.aspx?MaSV=2021010112"> Doanh nghiệp</a>
+                  </li>
+                  <li>
+                    <a id="Menu" href="CNKHOA_DN.aspx">Khoa CNTT</a>
+                  </li>
+                  <li >
+                    <a id="Menu"  href="CNSinhvien_Chongv.aspx?MaSV=2021010112">Giảng viên</a>
+                  </li>
+                </ul>
+              </div>
+                <div style="display:flex;">
+                <a href="#"
+                  ><button><img src="Image/noti.png"/></button
+                ></a>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <img src="Image/user.png"/>
+                  </button>
+                   <div class="dropdown-content">
+                    <a href="IPersonal.html">Hồ sơ cá nhân</a>
+                    <a href="LoginForm.aspx">Đăng xuất</a>
+                  </div>
+                </div>
+              <p>&nbsp;SINH VIÊN</p>
+                </div>
+            </nav>
+          </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

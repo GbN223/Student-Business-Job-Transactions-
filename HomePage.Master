@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="NCKH.HomePage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet"/>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style3 {
+            width: 46px;
+            height: 42px;
+        }
+        .auto-style4 {
+            height: 45px;
+            width: 81px;
+        }
+        .auto-style5 {
+            height: 45px;
+            width: 192px;
+        }
+        .auto-style6 {
+            height: 45px;
+            width: 956px;            
+        }
+        #hlTenNhom {
+            font-family:'Baloo';
+            font-size:21px;
+        }          
+        #Menu1 {
+             font-family:'Baloo';     
+             font-size:21px; 
+             align-content: center;
+          
+        }        
+        .auto-style8 {
+            height: 45px;
+            width: 150px;
+            font-family: 'Baloo';
+            font-size: 21px;
+            padding-left:3em;
+            transform:translateX(3.6em);
+        }
+        .auto-style9 {
+            height: 45px;
+        }
+        .search{
+            font-size:15pt;
+
+        }
+    </style>
+</head>
+<body style="width: 1280px;overflow-x:hidden">
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style4">
+                        <img alt="logo" class="auto-style3" src="Media/Logo%20(1).png" id="imglogo" />&nbsp; </td>
+                    <td class="auto-style5">
+                        &nbsp;<asp:HyperLink ID="hlTenNhom" runat="server" ForeColor="#1D478B">UFM KẾT NỐI</asp:HyperLink>
+                        &nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="16px" ForeColor="#111111">
+                            <Items>
+                                <asp:MenuItem Text="Doanh Nghiệp" Value="dn"></asp:MenuItem>
+                                <asp:MenuItem Text="Khoa CNTT" Value="kcntt"></asp:MenuItem>
+                                <asp:MenuItem Text="Giảng Viên" Value="gv"></asp:MenuItem>
+                            </Items>
+                            <StaticMenuItemStyle HorizontalPadding="20px" />
+                            <StaticMenuStyle HorizontalPadding="180px" />
+                        </asp:Menu>
+                    </td>
+                    <td class="auto-style8">
+                        <asp:HyperLink style="text-decoration-line:none;" ID="HyperLink1" runat="server" BackColor="#CCCCFF" BorderStyle="None" ForeColor="#1D478B" NavigateUrl="~/LoginForm.aspx" BorderColor="White">ĐĂNG NHẬP</asp:HyperLink>
+                    </td>
+                </tr>
+                </table>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    </body>
+</html>

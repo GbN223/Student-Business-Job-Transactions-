@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CNGIANGVIEN.master.cs" Inherits="NCKH.CNGIANGVIEN" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <LINK REL=StyleSheet HREF="css/Style-GVMasterPage.css" TYPE="text/css" >
+    <link href="https://fonts.googleapis.com/css2?family=Bungee" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+         
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="header_TL">
+            <nav class="nav_TL">
+              <div class="logo">
+                <img width="40px" height="40px" src="Image\Logo.png" />
+                <a class="SpanUFM" href="Trangchu.html">UFM KẾT NỐI</a>
+              </div>
+              <div class="menu">
+                <ul>
+                  <li >
+                    <a id="Menu" href="CKHOA_TB.aspx"> Kế hoạch</a>
+                  </li>
+                  <li>
+                    <a id="Menu" href="CNKHOA_DN.aspx">Hướng dẫn thực tập</a>
+                  </li >
+                </ul>
+              </div>
+                <div style="display:flex;">
+                <a href="#"><button><img src="Image/icons8_notification_30px.png"/></button></a>
+                <div class="dropdown">
+                  <button class="dropbtn">
+                    <img src="Image/icons8_user_30px.png"/>
+                  </button>
+                   <div class="dropdown-content">
+                    <a href="IPersonal.html">Hồ sơ cá nhân</a>
+                    <a href="Login.html">Đăng xuất</a>
+                  </div>
+                </div>
+              <p></p>
+                </div>
+            </nav>
+          </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
