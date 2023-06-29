@@ -17,7 +17,7 @@
         <div class="header">
             <nav class="nav">
               <div class="logo">
-                <img width="40px" height="40px" src="Image\Logo.png" />
+                <img width="50" src="Image\Logo.png" />
                 <a class="SpanUFM" href="Trangchu.html">UFM KẾT NỐI</a>
               </div>
               <div class="menu">
@@ -50,13 +50,14 @@
                   </div>
                 </div>
               <p>KHOA CNTT</p>
-                </div>
+                </div>                
             </nav>
+            <div class="linehead"></div>
           </div>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+        </div>        
     </form>
 </body>
 </html>

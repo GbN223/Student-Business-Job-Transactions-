@@ -48,16 +48,16 @@
   					Bảng điểm
 				</button>
 				<div class="modal fade" id="cv1Modal" tabindex="-1" role="dialog" aria-labelledby="cv1ModalLabel" aria-hidden="true" >
-  					<div class="modal-dialog" role="document" style="width:800px; margin-left:30%">
-    					<div class="modal-content" style="width:800px">
-      						<div class="modal-header" style="width:800px">
+  					<div class="modal-dialog" role="document" style="width:720px; margin-left:23%">
+    					<div class="modal-content" style="width:720px">
+      						<div class="modal-header" style="width:720px">
         						<h5 class="modal-title" id="cv1ModalLabel">Bảng điểm</h5>
         						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           							<span aria-hidden="true">&times;</span>
         						</button>
       						</div>
       						<div class="modal-body" style="width:800px" >
-                                  <asp:Image Width="780px"  ID="imgBangdiem" runat="server"  />
+                                  <asp:Image Width="700px"  ID="imgBangdiem" runat="server"  />
       						</div>
       						<div class="modal-footer">
         						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -71,16 +71,16 @@
   					Thành tích
 				</button>
 				<div class="modal fade" id="cv2Modal" tabindex="-1" role="dialog" aria-labelledby="cv2ModalLabel" aria-hidden="true">
-  					<div class="modal-dialog" role="document">
-    					<div class="modal-content">
-      						<div class="modal-header">
-        						<h5 class="modal-title" id="cv2ModalLabel">CV 2</h5>
+  					<div class="modal-dialog" role="document" style="width:720px; margin-left:23%">
+    					<div class="modal-content" style="width:720px">
+      						<div class="modal-header" style="width:720px">
+        						<h5 class="modal-title" id="cv2ModalLabel">Thành tích</h5>
         						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           							<span aria-hidden="true">&times;</span>
         						</button>
       						</div>
       						<div class="modal-body">
-                                  <asp:Image ID="Image1" runat="server" />
+                                  <asp:Image Width="700px" ID="Image1" runat="server" />
       						</div>
       						<div class="modal-footer">
         						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.OleDb;
-using System.Data;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Web;
-using System.Web.UI;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Web.UI.WebControls;
 using Label = System.Web.UI.WebControls.Label;
-using System.Drawing;
-using System.Data.SqlClient;
 
 namespace NCKH
 {
@@ -17,17 +11,17 @@ namespace NCKH
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text=DataList_DN.Items.Count.ToString();
+            Label1.Text = DataList_DN.Items.Count.ToString();
 
         }
 
-    
+
 
         protected void btnThemDN_Click(object sender, EventArgs e)
         {
             int soDN = DataList_DN.Items.Count;
-            String SoDN=soDN.ToString();
-            Response.Redirect("~\\CNKHOA_DNTTCT.aspx?SoDN="+SoDN+"");
+            String SoDN = soDN.ToString();
+            Response.Redirect("~\\CNKHOA_DNTTCT.aspx?SoDN=" + SoDN + "");
         }
 
         protected void DataList_DN_ItemCommand(object source, DataListCommandEventArgs e)
@@ -36,10 +30,10 @@ namespace NCKH
             Button btnDangky = dataListItem.FindControl("btnDangkyDN") as Button;
             if (e.CommandName == "dangky")
             {
-               
+
                 DateTime dateTime = DateTime.Now;
                 String nam = dateTime.Year.ToString();
-                String thang=dateTime.Month.ToString();
+                String thang = dateTime.Month.ToString();
                 int thangHK = Int32.Parse(thang);
                 String hocki = "";
                 if (0 < thangHK || thangHK < 6)
@@ -54,7 +48,7 @@ namespace NCKH
                 {
                     hocki = "HK03";
                 }
-                String MaDN=((Label)e.Item.FindControl("MADN")).Text.Trim();
+                String MaDN = ((Label)e.Item.FindControl("MADN")).Text.Trim();
                 try
                 {
                     SqlDataSource_DangkyDN.InsertParameters.Clear();
@@ -65,28 +59,33 @@ namespace NCKH
                     btnDangky.Text = "Đã chọn";
                     btnDangky.Enabled = false;
                     btnDangky.BackColor = Color.Brown;
-                } catch(Exception ex)
+
+                }
+                catch (Exception ex)
                 {
-                   // Label1.Text = "" + ex.Message;
+                    // Label1.Text = "" + ex.Message;
                 }
             }
             if (e.CommandName == "Xoa")
             {
                 String MaDN = ((Label)e.Item.FindControl("MADN")).Text.Trim();
                 SqlDataSource_DangkyDN.DeleteCommand = "Delete tbDoanhnghiep where MaDN=@MaDN";
-                try { 
+                try
+                {
                     SqlDataSource_DangkyDN.DeleteParameters.Clear();
-                    SqlDataSource_DangkyDN.DeleteParameters.Add("MaDN",MaDN);
+                    SqlDataSource_DangkyDN.DeleteParameters.Add("MaDN", MaDN);
                     SqlDataSource_DangkyDN.Delete();
                     this.Title = "Thành công";
                     DataList_DN.DataBind();
-                }catch(Exception ex) {
-                    this.Title = ""+ex.Message;
+                }
+                catch (Exception ex)
+                {
+                    this.Title = "" + ex.Message;
                 }
             }
         }
 
-        private int GetDataDangkyDN( String MaDN)
+        private int GetDataDangkyDN(String MaDN)
         {
             //int count = 0;
             List<String> list = new List<String>();
@@ -126,10 +125,10 @@ namespace NCKH
             {
                 // access data item here
                 String MaDN = ((Label)e.Item.FindControl("MADN")).Text.Trim();
-                
+
                 DataListItem dataListItem = e.Item as DataListItem;
                 Button btnDangky = dataListItem.FindControl("btnDangkyDN") as Button;
-                if (GetDataDangkyDN( MaDN) > 0)
+                if (GetDataDangkyDN(MaDN) > 0)
                 {
                     btnDangky.Text = "Đã chọn";
                     btnDangky.Enabled = false;
@@ -140,8 +139,8 @@ namespace NCKH
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
-    
+
 }

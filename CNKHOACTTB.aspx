@@ -8,6 +8,35 @@
         .auto-style1 {
             width: 100%;
         }
+        .modalPopup {
+        background-color: #fff;
+        border: 1px solid #666;
+        padding: 10px;
+        display: none;
+        z-index: 100001;
+        position: absolute;
+    }
+    .modalTitle {
+        font-weight: bold;
+        text-align: center;
+    }
+    .modalBody {
+        text-align: center;
+    }
+    .modalFooter {
+        text-align: center;
+    }
+    .modalBackground {
+        background-color: #000;
+        filter: alpha(opacity=70);
+        opacity: 0.7;
+        z-index: 100000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -36,9 +65,10 @@
                 <asp:Label runat="server" AssociatedControlID="FileUpload_File" Text="File đính kèm:" />
                 <asp:FileUpload runat="server" ID="FileUpload_File" CssClass="form-control" />
             </div>  
+                
             <asp:Button ID="btnLuu" runat="server" Text="Lưu" CssClass="btn btn-default" OnClick="btnLuu_Click"  />
             <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn btn-default" OnClick="btnHuy_Click" />
-        </div>
+               
                      </div></td>
         </tr>
         <tr>

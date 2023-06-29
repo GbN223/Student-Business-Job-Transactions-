@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using VisioForge.MediaFramework.ONVIF;
 
 namespace NCKH
 {
@@ -39,7 +36,7 @@ namespace NCKH
                         tbxNoidung.Text = reader.GetString(2);
                         FileUpload_Hinh.SaveAs(reader.GetString(3));
                         FileUpload_File.SaveAs(reader.GetString(4));
-                       
+
                     }
 
 
@@ -54,8 +51,38 @@ namespace NCKH
         }
         protected void btnLuu_Click(object sender, EventArgs e)
         {
-
-        }
+            
+            SqlDataSource SqlDataSource_KHOATB = new SqlDataSource();
+            SqlDataSource_KHOATB.ID = "SqlDataSource1";
+            SqlDataSource_KHOATB.ConnectionString = "Data Source=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com;Initial Catalog=1G05NguyenChiBaoDangkykhoahoc;Persist Security Info=False;User ID=pop123_SQLLogin_1;Password=6f6yctis21;Packet Size=4096;Workstation ID=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com";
+            SqlDataSource_KHOATB.InsertCommand = "INSERT INTO tbThongBao (MATB,TIEUDE,NOIDUNG,HINH,LINK,MAKH)VALUES(@MATB,@TIEUDE,@NOIDUNG,@HINH,@LINK,@MAKH)";
+            System.DateTime t = System.DateTime.Now;
+            String MaTB=t.Millisecond+t.Minute.ToString() + t.Day.ToString() + t.Month.ToString() + t.Year.ToString();
+            try
+            {
+                //1Đinh nghĩa các tham số parameters cho Insertcommnand : tham số cho field hinh có dạng ~\\Images\\Tên file hình được uploadfilename
+                SqlDataSource_KHOATB.InsertParameters.Clear();
+                SqlDataSource_KHOATB.InsertParameters.Add("MaTB", MaTB);
+                SqlDataSource_KHOATB.InsertParameters.Add("Tieude", tbxTieude.Text);
+                SqlDataSource_KHOATB.InsertParameters.Add("Noidung", tbxNoidung.Text.Trim());
+                SqlDataSource_KHOATB.InsertParameters.Add("Hinh", "~\\Image\\" + FileUpload_Hinh.FileName); //Add Path của file Hình vào DB
+                SqlDataSource_KHOATB.InsertParameters.Add("MaKH", "");
+                SqlDataSource_KHOATB.InsertParameters.Add("Link", "~\\PDF\\" + FileUpload_Hinh.FileName);
+                //2Chạy lệnh Insert để lưu thông tin mặt hàng mới vào DB
+                SqlDataSource_KHOATB.Insert();
+                //3 Lưu (copy) hình vửa được nsd Upload vào thư mục ~\\Images\\ của App
+                //OFFLINE
+                FileUpload_Hinh.SaveAs("~\\Image\\" + FileUpload_Hinh.FileName.Trim());
+                FileUpload_File.SaveAs("~\\PDF\\" + FileUpload_File.FileName.Trim());
+              
+               
+                Response.Redirect("~\\CKHOA_TB.aspx");
+                
+            }
+            catch (System.Exception ex) { Response.Redirect("~\\CKHOA_TB.aspx"); }
+           
+        
+    }
 
         protected void btnHuy_Click(object sender, EventArgs e)
         {

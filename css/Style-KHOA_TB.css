@@ -25,21 +25,40 @@
     width:55%;
     float:right;
 }
+
 .row-1-button-add {
     float: right;
-    width:140px;
+    width: 140px;
     height: 40px;
-    background: #D85124;
-    border-radius:25px;
+    background: #D85124;    
+    border-radius: 25px;
     border-style: none;
     color: aliceblue;
     font-weight: bold;
-    cursor: pointer;
+    
 }
     .row-1-button-add:hover {
         color: #D85124;
         background: aliceblue;
         border: 1px solid #D85124;
+    }
+
+.row-1-colum2 .auto-style7 {
+    background-image: url("../Image/icons8_add_30px.png");
+    background-repeat: no-repeat;
+    background-position: 4% center;
+    border-radius: 8px;
+    text-align: right;
+    padding: 0 5px;
+    background-color: #0E3980;
+    margin-right: 14px;
+}
+    .row-1-colum2 .auto-style7:hover,
+    .btnCX .btnCapnhat:hover,
+    .btnCX .btnxoa:hover {
+        cursor: pointer;
+        background-color: #ff6c2b;
+        border: none;
     }
 .row-3-textbox{
     width:250px;
@@ -56,4 +75,47 @@
     border-radius: 20px;
     background: aliceblue;
     padding-left: 10px;
+}
+
+.btnCX .btnCapnhat {
+    width: 85px;
+    height: 35px;
+    float: right;
+    margin-right: 1.5%;
+    margin-top: 15px;
+    background-image: url("../Image/icons8_edit_profile_30px_1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #0E3980;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.btnCX .btnxoa {
+    width: 85px;
+    height: 35px;
+    float: right;
+    margin-right: 1.5%;
+    margin-top: 15px;
+    background-image: url("../Image/icons8_delete_30px.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #0E3980;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.gradient-1 {
+    font-weight: 800;
+    background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.linehead {
+    background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-text-fill-color: transparent;
+    height: 3px;
 }

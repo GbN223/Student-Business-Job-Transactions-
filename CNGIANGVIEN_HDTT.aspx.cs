@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace NCKH
@@ -22,7 +18,7 @@ namespace NCKH
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
-            if (e.CommandName=="duyet")
+            if (e.CommandName == "duyet")
             {
                 try
                 {
@@ -30,7 +26,7 @@ namespace NCKH
                 }
                 catch (System.Exception ex) { this.Title = "LỖI THÊM = " + ex.Message; }
                 GridView1.DataBind();
-                
+
             }
         }
 

@@ -1,4 +1,5 @@
-﻿body {
+body {
+    font-family: Arial;
 }
 .row-1 {
     display: block;
@@ -26,12 +27,21 @@
     float: left;
     padding-left: 10px;
 }
+
+.row-1 .row-1-colum1 h1 {
+    font-family: Arial;
+    font-size: 26px;
+    color: #D85121;
+    padding-top: 10px;
+}
+
 .row-1-colum2 {
-    display: block;
+    display: flex;
     width: 45%;
     height:auto;
     float: right;
     padding-left:265px;
+    padding-top:20px;
 }
 .row-1-colum1 h1 {
     font-family: Arial;
@@ -55,6 +65,39 @@
     font-size:13px;
     margin-top:10px;
 }
+.button-delete {
+    width: 50px;
+    height: 35px;
+    float: right;
+    margin-right: 1.5%;
+    margin-top: 4%;
+    background: #1C4487;
+    background-image: url("../Image/icons8_edit_profile_30px_1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 13px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.button-update  {
+    width: 50px;
+    height: 35px;
+    float: right;
+    margin-right: 1.5%;
+    margin-top: 4%;
+    background: #1C4487;
+    background-image: url("../Image/icons8_delete_30px.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    border-style: none;
+    font-size: 13px;
+    color: aliceblue;
+    cursor: pointer;
+}
 .text-box-search {
     width: 280px;
     height: 30px;
@@ -66,24 +109,28 @@
     color: #808080;
     font-weight:bold;
     padding-left:10px;
-
 }
 .button-add {
-    width: 140px;
+    float: right;
     height: 45px;
-    margin-left:80%;
-    background: #D85121;
-    border-radius: 20px;
-    border-style: none;
-    font-size:13px;
-    color:aliceblue;
-    cursor:pointer;
+    width: 180px;
+    border-radius: 10px;
+    border: none;
+    background: #1C4487;
+    background-image: url("../Image/icons8_add_30px.png");
+    background-repeat: no-repeat;
+    background-position: 9% center;
+    padding-left: 30px;
+    font-family: Arial;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
 }
 .button-choose {
-    width: 140px;
+    width: 150px;
     height: 45px;
     float:right;
-    margin-right:2%;
+    margin-right: 10%;
     margin-top:1%;
     background: #D85121;
     border-radius: 20px;
@@ -92,20 +139,43 @@
     color: aliceblue;
     cursor: pointer;
 }
+
+.button-notchoose {
+    width: 150px;
+    height: 45px;
+    float: right;
+    margin-right: 10%;
+    margin-top: 1%;
+    background: #D85121;
+    border-radius: 20px;
+    border-style: none;
+    font-size: 13px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
 .button-search {
     border-style: none;
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 33px;
     background: #E5E7E9;
     background-image: url("../Image/icons8_search_30px.png");
     background-repeat: no-repeat;
     background-position:bottom;
-    cursor: pointer;
- 
+    cursor: pointer; 
+    padding-bottom: 8px;
+    padding-left: 3px;
 }
 .text-box-add{
     width:210px;
     height:30px;
     margin-top:10px;
     padding-left:10px;
+}
+
+.button-delete:hover,
+.button-update:hover,
+.button-choose:hover,
+.button-notchoose:hover {
+    background-color: #865DFF;
 }

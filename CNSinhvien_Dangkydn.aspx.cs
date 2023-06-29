@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace SINHVIEN
@@ -16,8 +12,8 @@ namespace SINHVIEN
         {
             if (!IsPostBack)
             {
-               
-                
+
+
             }
         }
 
@@ -37,7 +33,7 @@ namespace SINHVIEN
             String MaSV = Request.QueryString["MaSV"];
             DataListItem dataListItem = e.Item as DataListItem;
             Button btnDangky = dataListItem.FindControl("btnDangky") as Button;
-           
+
             if (e.CommandName == "dangkydn")
             {
 
@@ -45,7 +41,7 @@ namespace SINHVIEN
                 String nam = dateTime.Year.ToString();
                 String thang = dateTime.Month.ToString();
                 String ngay = dateTime.Day.ToString();
-                String ngaydangky =thang+"/"+ngay+"/"+nam;
+                String ngaydangky = thang + "/" + ngay + "/" + nam;
                 int thangHK = Int32.Parse(thang);
                 String hocki = "";
                 if (0 < thangHK || thangHK < 6)
@@ -60,7 +56,7 @@ namespace SINHVIEN
                 {
                     hocki = "HK03";
                 }
-               
+
                 try
                 {
                     SqlDataSource_SVDangkyDN.InsertParameters.Clear();
@@ -70,32 +66,32 @@ namespace SINHVIEN
                     SqlDataSource_SVDangkyDN.InsertParameters.Add("NAM", nam);
                     SqlDataSource_SVDangkyDN.InsertParameters.Add("TINHTRANG", "null");
                     SqlDataSource_SVDangkyDN.InsertParameters.Add("KHOAHOC", "null");
-                    SqlDataSource_SVDangkyDN.InsertParameters.Add("NGAYDANGKY",ngaydangky);
+                    SqlDataSource_SVDangkyDN.InsertParameters.Add("NGAYDANGKY", ngaydangky);
                     SqlDataSource_SVDangkyDN.Insert();
                     lblError.Text = "Đăng ký thành công";
-                 
+
                     btnDangky.Text = "Đã đăng ký";
                     btnDangky.Enabled = false;
                     btnDangky.BackColor = Color.Brown;
-                    if (GetDataDangkyGV(MaSV) <1)
+                    if (GetDataDangkyGV(MaSV) < 1)
                     {
                         btnDangky.OnClientClick = "return confirm('B1.Đăng ký doanh nghiệp thành công\n\nB2. Đăng ký giảng viên hướng dẫn\n\nMời bạn sang B2!')";
                         lblError.Text = "B1.Đăng ký doanh nghiệp thành công\n\nB2. Đăng ký giảng viên hướng dẫn\n\nMời bạn sang B2!";
-                        Response.Redirect("~\\CNSinhvien_Chongv.aspx?MaSV="+MaSV+"");
+                        Response.Redirect("~\\CNSinhvien_Chongv.aspx?MaSV=" + MaSV + "");
                     }
                     else
                     {
                         btnDangky.OnClientClick = "return confirm('Bạn đã hoàn tất quy trình đăng ký')";
-                        
+
                     }
                 }
                 catch (Exception ex)
                 {
-                    lblError.Text = ""+ex.Message;
+                    lblError.Text = "" + ex.Message;
                 }
             }
         }
-        private int GetDataDangkyDN(String MaSV,String MaDN)
+        private int GetDataDangkyDN(String MaSV, String MaDN)
         {
             //int count = 0;
             List<String> list = new List<String>();
@@ -106,7 +102,7 @@ namespace SINHVIEN
                 {
                     connection.Open();
 
-                    string sqlQuery = "SELECT * FROM tbDangky where MaSV='" + MaSV + "' and MaDN='"+MaDN+"'";
+                    string sqlQuery = "SELECT * FROM tbDangky where MaSV='" + MaSV + "' and MaDN='" + MaDN + "'";
                     SqlCommand command = new SqlCommand(sqlQuery, connection);
 
 
@@ -129,7 +125,7 @@ namespace SINHVIEN
             }
             return list.Count;
         }
-        private int GetDataDangkyGV( String MaSV)
+        private int GetDataDangkyGV(String MaSV)
         {
             //int count = 0;
             List<String> list = new List<String>();
@@ -139,7 +135,7 @@ namespace SINHVIEN
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    
+
                     string sqlQuery = "SELECT * FROM tbDangkyGV where MaSV='" + MaSV + "'";
                     SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -152,15 +148,16 @@ namespace SINHVIEN
 
                     }
                     lblError.Text = "" + list.Count;
-                    
-                    
-                    
+
+
+
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 lblError.Text = "" + ex.Message;
             }
-            return list.Count ;
+            return list.Count;
         }
 
         protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -186,5 +183,5 @@ namespace SINHVIEN
 
         }
     }
-    
+
 }

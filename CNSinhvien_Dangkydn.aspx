@@ -26,13 +26,15 @@
         }
         .auto-style7 {
             width: 99%;
-            height: 101px;
+            height: 80px;
             margin-bottom: 278;
             margin-left: 8px;
         }
         .auto-style8 {
             height: 62px;
             width: 553px;
+            text-align:justify;
+             word-wrap: break-word;
         }
         .auto-style9 {
             width: 239px;
@@ -68,6 +70,12 @@
             float:left;
           
         }
+        .Yeucau{
+            width:100%;
+            text-align:justify;
+            height:50px;
+            word-break:break-word;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -94,7 +102,7 @@
                         <td>&nbsp;</td>
                     </tr>
                 </table>
-                <asp:DataList ID="DataList1" runat="server" DataKeyField="MaDN" DataSourceID="SqlDataSourceDN" Height="527px" Width="1325px" CellPadding="4" ForeColor="#333333" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnItemCommand="DataList1_ItemCommand" OnItemDataBound="DataList1_ItemDataBound" style="margin-left:1%">
+                <asp:DataList ID="DataList1" runat="server" DataKeyField="MaDN" DataSourceID="SqlDataSourceDN" Height="527px" Width="1325px" CellPadding="4" ForeColor="#333333" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" OnItemCommand="DataList1_ItemCommand" OnItemDataBound="DataList1_ItemDataBound" style="margin-left:1%" BorderColor="#FF9900">
                     <AlternatingItemStyle BackColor="White" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -104,13 +112,15 @@
                     <ItemTemplate>
                         <table class="auto-style7">
                             <tr>
+                               
                                 <td class="auto-style5">
-                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Hinh") %>' Width="200px" />
+                                     <br />
+                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Hinh") %>' Width="160px" Height="160px" />
                                     <br />
                                     <asp:Label ID="MaDNLabel" runat="server" Text='<%# Eval("MaDN") %>' Visible="False" />
                                 </td>
                                 <td class="auto-style8">
-                                    <asp:Label ID="YeucauLabel" runat="server" Font-Size="Large" Text='<%# Eval("Yeucau") %>' />
+                                    <asp:Label ID="YeucauLabel" CssClass="Yeucau" runat="server"  Font-Size="Large" Text='<%# Eval("Yeucau") %>' />
                                 </td>
                                 <td class="auto-style26">&nbsp;</td>
                                 <td class="auto-style17">
@@ -123,10 +133,11 @@
                                 <td class="auto-style3">
                                     <asp:Button ID="btnDangky" runat="server" CssClass="btnDangkydn" BackColor="#FF6600" BorderColor="#FF6600" Font-Bold="True" Font-Size="Medium" ForeColor="White" Height="48px" Text="Đăng ký" Width="134px"  CommandName="dangkydn" OnClick="btnDangky_Click" />
                                 </td>
+                              
                             </tr>
+                            
                         </table>
-                        <br />
-                        <br />
+                       
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
                 </asp:DataList>

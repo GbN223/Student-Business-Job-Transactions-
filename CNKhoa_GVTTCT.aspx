@@ -15,7 +15,7 @@
         <tr>
             <td>
                 <div class="container">
-            <h2>Bootstrap Form Example</h2>
+            <h2>Thông tin giảng viên</h2>
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="tbxTenGV" Text="Tên giảng viên" />
                 <asp:TextBox runat="server" ID="tbxTenGV" CssClass="form-control" />
@@ -38,7 +38,8 @@
             </div>
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="uploadFile" Text="Hình" />
-                <asp:FileUpload runat="server" ID="uploadFile" CssClass="form-control" />
+                <asp:FileUpload runat="server" ID="uploadFile"   CssClass="form-control" onchange="validateFileUpload()" />
+                <asp:Label ID="ErrorMessageLabel" runat="server" Text="" ForeColor="Red" />
             </div>
             <asp:Button ID="btnLuu" runat="server" Text="Lưu" CssClass="btn btn-default" OnClick="btnLuu_Click" data-toggle="modal" data-target="#myModal" />
                      <asp:Button runat="server" ID="btnHuy" Text="Hủy" CssClass="btn btn-default" OnClick="btnHuy_Click" />
@@ -66,4 +67,21 @@
             <td>&nbsp;</td>
         </tr>
     </table>
+    <script>
+        function validateFileUpload() {
+            var fileInput = document.getElementById("uploadFile");
+            var filePath = fileInput.value;
+            var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+            if (!allowedExtensions.exec(filePath)) {
+                // The selected file is not an image file, so clear the selection and display an error message
+                fileInput.value = "";
+                document.getElementById("ErrorMessageLabel").innerHTML = "Only image files (.jpg, .jpeg, .png, .gif) are allowed.";
+                return false;
+            }
+            else {
+                // The selected file is an image file, so submit the form to upload the file
+                document.getElementById("ErrorMessageLabel").innerHTML = "";
+                return true;
+            }
+        }</script>
 </asp:Content>

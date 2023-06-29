@@ -1,21 +1,14 @@
-﻿using iTextSharp.text.html.simpleparser;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Drawing;
-using Font = iTextSharp.text.Font;
-using System.Text;
 using OfficeOpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml;
+using System;
 using System.Data;
+using System.IO;
+using System.Text;
+using System.Web;
+using System.Web.UI.WebControls;
+using VisioForge.Libs.DirectShowLib;
+using Font = iTextSharp.text.Font;
 
 namespace NCKH
 {
@@ -23,6 +16,10 @@ namespace NCKH
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           DropDownList1.Items.Add(new System.Web.UI.WebControls.ListItem("2020", "2020"));
+            DropDownList1.Items.Add(new System.Web.UI.WebControls.ListItem("2021", "2021"));
+            DropDownList1.Items.Add(new System.Web.UI.WebControls.ListItem("2022", "2022"));
+            DropDownList1.Items.Add(new System.Web.UI.WebControls.ListItem("2023", "2023"));
 
         }
 
@@ -62,10 +59,10 @@ namespace NCKH
         }
         private void ExportGridToPDF()
         {
-           
 
 
-           
+
+
 
             Response.ContentType = "application/pdf";
             Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.pdf");

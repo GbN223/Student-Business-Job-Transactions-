@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentFormat.OpenXml.Presentation;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -24,7 +27,7 @@ namespace NCKH
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void DataList_TB_ItemCommand(object source, DataListCommandEventArgs e)
@@ -34,6 +37,11 @@ namespace NCKH
                 String MaTB= ((System.Web.UI.WebControls.Label)e.Item.FindControl("MaTB")).Text.Trim();
                 Response.Redirect("~\\CNKHOACTTB.aspx?MaTB="+MaTB+"");
             }
+        }
+
+        protected void DataList_TB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

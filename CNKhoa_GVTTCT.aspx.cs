@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,10 +13,35 @@ namespace NCKH
             if (!IsPostBack)
             {
                 String update = Request.QueryString["Update"];
-                if (update!=null)
+                if (update != null)
                 {
-                    
+
                     getThongtin();
+                }
+                if (IsPostBack)
+                {
+                    if (uploadFile.HasFile)
+                    {
+                        string fileExtension = System.IO.Path.GetExtension(uploadFile.FileName).ToLower();
+                        string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
+                        if (allowedExtensions.Contains(fileExtension))
+                        {
+                            // The uploaded file is an image file, so save it to the server
+                            string fileName = Guid.NewGuid().ToString() + fileExtension;
+                            uploadFile.SaveAs(Server.MapPath("~/Image/" + fileName));
+                            // Do something with the uploaded file, such as display it in an Image control
+                        }
+                        else
+                        {
+                            // The uploaded file is not an image file, so display an error message
+                            ErrorMessageLabel.Text = "Only image files (.jpg, .jpeg, .png, .gif) are allowed.";
+                        }
+                    }
+                    else
+                    {
+                        // No file was uploaded, so display an error message
+                        ErrorMessageLabel.Text = "Please select a file to upload.";
+                    }
                 }
             }
         }
@@ -40,12 +63,12 @@ namespace NCKH
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        tbxTenGV.Text=reader.GetString(1);
-                        tbxHocvi.Text=reader.GetString(2);
-                        tbxChucvu.Text=reader.GetString(3);
-                        tbxEmail.Text=reader.GetString(4);
-                        tbxChitieu.Text=reader.GetString(5);
-                        uploadFile.SaveAs(reader.GetString(6));   
+                        tbxTenGV.Text = reader.GetString(1);
+                        tbxHocvi.Text = reader.GetString(2);
+                        tbxChucvu.Text = reader.GetString(3);
+                        tbxEmail.Text = reader.GetString(4);
+                        tbxChitieu.Text = reader.GetString(5);
+                        uploadFile.SaveAs(reader.GetString(6));
                     }
 
 
@@ -74,10 +97,10 @@ namespace NCKH
                 sqlData.UpdateCommand = "Update tbGiangvien set TenGV=@TenGV,Hocvi=@Hocvi,Chucvu=@Chucvu,Email=@Email,Chitieu=@Chitieu" +
                     " where MaGV='" + MaGV + "'";
                 String Hoten = tbxTenGV.Text.Trim();
-                String Hocvi= tbxHocvi.Text.Trim();
+                String Hocvi = tbxHocvi.Text.Trim();
                 String Chucvu = tbxChucvu.Text.Trim();
                 String Email = tbxEmail.Text.Trim();
-                String Chitieu=tbxChitieu.Text.Trim();
+                String Chitieu = tbxChitieu.Text.Trim();
                 sqlData.UpdateParameters.Clear();
                 sqlData.UpdateParameters.Add("TenGV", Hoten);
                 sqlData.UpdateParameters.Add("Hocvi", Hocvi);
@@ -87,10 +110,10 @@ namespace NCKH
                 sqlData.Update();
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "myModal", "$('#myModal').modal('show');", true);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "myModal", "$('#myModal').modal('show');", true);
-                this.Title= ex.Message;
+                this.Title = ex.Message;
             }
         }
     }

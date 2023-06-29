@@ -50,7 +50,6 @@
             </div>
             <asp:Button ID="btnLuu" runat="server" Text="Lưu" CssClass="btn btn-default" OnClick="btnLuu_Click" />
             <asp:Button ID="btnHuy" runat="server" Text="Hủy" CssClass="btn btn-default" OnClick="btnHuy_Click" />
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
         </div>
                      </div>
             </td>

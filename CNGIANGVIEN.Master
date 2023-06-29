@@ -15,8 +15,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div class="header_TL">
-            <nav class="nav_TL">
+            <div class="header">
+            <nav class="nav">
               <div class="logo">
                 <img width="40px" height="40px" src="Image\Logo.png" />
                 <a class="SpanUFM" href="Trangchu.html">UFM KẾT NỐI</a>
@@ -39,8 +39,9 @@
                   </button>
                    <div class="dropdown-content">
                     <a href="IPersonal.html">Hồ sơ cá nhân</a>
-                    <a href="Login.html">Đăng xuất</a>
+                    <a href="LoginForm.aspx">Đăng xuất</a>
                   </div>
+                    <p></p>
                 </div>
               <p></p>
                 </div>

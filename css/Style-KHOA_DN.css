@@ -11,9 +11,10 @@ body {
     padding-left:2%;
     float:left;
 }
-    .row-1-colum1 h3 {
+    .row-1-colum1 h2 {
         color: #22468E;
-        font-family: Arial;
+        font-family: Tahoma;
+        font-weight:bold;
     }
 .row-1-colum2 {
     width: 45%;
@@ -31,23 +32,33 @@ body {
 }
 .button-add {
     float: right;
-    border: 1px solid #417FC7;
-    height: 40px;
-    width: 130px;
-    border-radius: 25px;
-    background: #fff;
+    height: 45px;
+    width: 180px;
+    border-radius: 10px;
+    border: none;
+    background: #1C4487;
+    background-image: url("../Image/icons8_add_30px.png");
+    background-repeat: no-repeat;
+    background-position: 9% center;
+    padding-left: 30px;
     font-family: Arial;
     font-weight: bold;
-    color: #417FC7;
-    cursor:pointer;
+    color: #fff;
+    cursor: pointer;
 }
+
+.button-add:hover {
+       
+   background: #ff6c2b;
+    }
+
 .button-choose {
-    width: 173px;
+    width: 174px;
     height: 35px;
     /* float: inherit; */
     margin-right: 2%;
     background: #D85121;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
     font-size: 13px;
     color: aliceblue;
@@ -56,7 +67,7 @@ body {
 }
 .button-cancelchoose {
     width: 90px;
-    height: 30px;
+    height: 10px;
     float: left;
     float: top;
     margin-right: 2%;
@@ -68,56 +79,56 @@ body {
     cursor: pointer;
 }
 .button-delete {
-    width: 90px;
-    height: 30px;
+    width: 85px;
+    height: 35px;
     float: right;
-    margin-right: 1%;
+    margin-right: 5%;
     margin-top: 15px;
-    background-image:url("../Image/icons8_edit_profile_30px.png");
+    background-image:url("../Image/icons8_edit_profile_30px_1.png");
     background-repeat:no-repeat;
     background-position:center;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
     font-size: 13px;
     color: aliceblue;
     cursor: pointer;
 }
 .button-update {
-    width: 90px;
-    height: 30px;
+    width: 85px;
+    height: 35px;
     float: right;
-    margin-right: 1%;
+    margin-right: 1.5%;
     margin-top: 15px;
-    background-image: url("../Image/icons8_waste_40px_2.png");
+    background-image: url("../Image/icons8_delete_30px.png");
     background-repeat: no-repeat;
     background-position: center;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: none;
     font-size: 13px;
     color: aliceblue;
     cursor: pointer;
 }
-    .button-add:hover {
-        color: #fff;
-        background: #417FC7;
-        border: 2px solid #fff;
+    .button-update:hover,
+    .button-delete:hover {
+        cursor: pointer;
+        background-color: #ff6c2b;
+        border: none;
     }
-.title_name{
-    font-family:Arial;
-    font-weight:bold;
-    font-size:15px;
-    
+.title_name {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 2%;
 }
 .title_detail {
     font-family: Arial;
-    font-style:italic;
     font-size: 12px;
-}
-.text-box-short {
+    padding-left: 2%;
+    text-align: justify;
+    text-justify: inter-word;
     width: 250px;
     height: 30px;
     font-family: Arial;
-    font-weight: bold;
     margin-top: 1%;
 }
 .text-box-long {
@@ -129,4 +140,11 @@ body {
     padding-top:-100px;
     word-wrap:break-word;
     margin-top:1%;
+}
+
+.gradient-1 {
+    font-weight: 800;
+    background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

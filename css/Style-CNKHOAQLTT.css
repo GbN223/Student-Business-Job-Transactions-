@@ -1,4 +1,4 @@
-﻿body {
+body {
 }
 .row-1{
     width:100%;
@@ -7,7 +7,7 @@
 }
     .row-1 h2 {
         font-family: Arial;
-        font-size: 15px;
+        font-size: 20px;
         color: #22468E;
         font-weight:bold;
         margin-left:1%;
@@ -18,9 +18,18 @@
         padding-left:1%;
     }
 .row-4 {
+    font-family: Arial;
     width: 100%;
     display: block;
-    padding-left: 25%;
+    padding-left: 13%;
+}
+
+.column-center {
+    text-align: center;
+}
+
+.column-left {
+    padding-left: 10px;
 }
 .row-2 {
     width: 100%;
@@ -47,19 +56,20 @@
 .button-export {
     border: 1px solid #417FC7;
     height: 40px;
-    width: 130px;
-    border-radius: 25px;
+    width: 150px;
+    border-radius: 10px;
     color: #fff;
     font-family: Arial;
     font-weight: bold;
     background: #417FC7;
     cursor: pointer;
-    
+    background-image: linear-gradient(to right, #22468E,#417FC7)
 }
     .button-export:hover {
-        background: #fff;
-        color: #417FC7;
-        
+        background-image: linear-gradient(to right, #609966,#9DC08B);
+        color: #FEFBE9;
+        font-weight: bold;
+        border: none;
     }
 .row-3 p {
     width:50px;
@@ -72,20 +82,21 @@
 .row2-colum1 p {
     width:100px;
     font-family: Arial;
-    font-size: 15px;
+    font-size: 20px;
     color: #22468E;
     font-weight: bold;
-    margin-left:74%;
-   
+    margin-left:72%;   
 }
 .row2-colum2 p {
     width: 100px;
     font-family: Arial;
-    font-size: 15px;
+    font-size: 20px;
     color: #22468E;
     font-weight: bold;
+    padding-left:5px;
 }
 .dropdown-row2-colum1 {
+    margin: 5px 5px;
     width: 150px;
     height: 35px;
     border: 1px solid #417FC7;
@@ -95,11 +106,18 @@
     float:right;
 }
 .dropdown-row2-colum2 {
+    margin: 5px 5px;
     width: 150px;
     height: 35px;
     border: 1px solid #417FC7;
     color: #000000;
     font-family: Arial;
     font-weight: bold;
-    
+}
+
+.gradient-1 {
+    font-weight: 800;
+    background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

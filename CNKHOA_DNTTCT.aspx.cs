@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace NCKH
@@ -17,9 +12,9 @@ namespace NCKH
 
         protected void btnLuu_Click(object sender, EventArgs e)
         {
-            
+
             SqlDataSource sqlDataSourceDN = new SqlDataSource();
-            sqlDataSourceDN.ConnectionString= "Data Source=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com;Initial Catalog=1G05NguyenChiBaoDangkykhoahoc;Persist Security Info=False;User ID=pop123_SQLLogin_1;Password=6f6yctis21;Packet Size=4096;Workstation ID=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com";
+            sqlDataSourceDN.ConnectionString = "Data Source=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com;Initial Catalog=1G05NguyenChiBaoDangkykhoahoc;Persist Security Info=False;User ID=pop123_SQLLogin_1;Password=6f6yctis21;Packet Size=4096;Workstation ID=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com";
             String soDN = Request.QueryString["SoDN"];
             int sdn = Int32.Parse(soDN) + 1;
             String MaDN = "DN" + sdn;
@@ -46,22 +41,21 @@ namespace NCKH
                 //Khi App này được Copy đi nơi khác => thì Update lại path này 
                 //ONLINE (khi upload lên Host, VD: somee thì phải dùng path vật lý của somee - tuy nhiên: tùy thuộc vào bảo mật của Host có thể không SaveAs được
                 //FileUploadHinhSaveAs("D:\\DZHosts\\LocalUser\\gtwovxthe\\wwwdrunkshopg206vxthesomeecom\\" + FileUploadHinhFileNameTrim());
-                lblError.Text = "Thành công";
-                this.Title = "Thành công";
+               
             }
-            catch (System.Exception ex) { lblError.Text = "LỖI THÊM DN MỚI = " + ex.Message; this.Title = "" + ex.Message; }
+            catch (System.Exception ex) { Response.Redirect("~\\CNKHOA_DN.aspx"); }
 
         }
 
         protected void btnHuy_Click(object sender, EventArgs e)
         {
-            
-      
+
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

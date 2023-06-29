@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace NCKH
 {
     public partial class CNSinhvien_Chongv : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -65,7 +61,7 @@ namespace NCKH
                     dataSource.InsertParameters.Add("KHOAHOC", "null");
                     dataSource.InsertParameters.Add("NGAYDANGKY", ngaydangky);
                     dataSource.Insert();
-                   // lblError.Text = "Đăng ký thành công";
+                    // lblError.Text = "Đăng ký thành công";
 
                     btnDangky.Text = "Đã đăng ký";
                     btnDangky.Enabled = false;
@@ -84,7 +80,7 @@ namespace NCKH
                 }
                 catch (Exception ex)
                 {
-                   this.Title= ex.Message;
+                    this.Title = ex.Message;
                     //lblErro.Text = "" + ex.Message;
                 }
             }
@@ -92,7 +88,7 @@ namespace NCKH
 
         protected void btnDangky_Click(object sender, EventArgs e)
         {
-            
+
 
 
         }
@@ -112,7 +108,7 @@ namespace NCKH
                 {
                     connection.Open();
 
-                    string sqlQuery = "SELECT * FROM tbDangkyGV where MaSV='" + MaSV + "' and MaGV='"+MaGV+"'";
+                    string sqlQuery = "SELECT * FROM tbDangkyGV where MaSV='" + MaSV + "' and MaGV='" + MaGV + "'";
                     SqlCommand command = new SqlCommand(sqlQuery, connection);
 
 
@@ -123,7 +119,7 @@ namespace NCKH
                         list.Add(reader.GetString(0));
 
                     }
-                   
+
 
 
 
@@ -140,14 +136,14 @@ namespace NCKH
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 // access data item here
-               
+
                 String MaSV = Request.QueryString["MaSV"];
                 DataListItem dataListItem = e.Item as DataListItem;
                 dataListItem.ID = "DataListThongtingv";
                 Button btnDangky = e.Item.FindControl("btnDangky") as Button;
                 Label lblSldangky = e.Item.FindControl("SldangkyLabel") as Label;
                 Label lblChitieu = e.Item.FindControl("ChitieuLabel") as Label;
-                int sldangky=Int32.Parse( lblSldangky.Text);
+                int sldangky = Int32.Parse(lblSldangky.Text);
                 int chitieu = Int32.Parse(lblChitieu.Text);
                 String MaGV = ((Label)e.Item.FindControl("MagvLabel")).Text.Trim();
                 if (sldangky >= chitieu)
@@ -156,7 +152,7 @@ namespace NCKH
                     btnDangky.Enabled = false;
                     btnDangky.BackColor = Color.Brown;
                 }
-                if (GetDataDangkyGV(MaSV,MaGV) > 0)
+                if (GetDataDangkyGV(MaSV, MaGV) > 0)
                 {
 
                     btnDangky.Text = "Đã đăng ký";

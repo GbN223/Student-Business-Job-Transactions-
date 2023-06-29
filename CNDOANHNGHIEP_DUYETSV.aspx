@@ -7,9 +7,11 @@
         }
 
         .auto-style2 {
+            width:100%;
             height: 100%;
             border-collapse: collapse;
-            padding: 0 4.8%;
+            
+            padding-left:10%;
         }
 
         .auto-style3 {
@@ -121,16 +123,14 @@
             top: 0px;
         }
         .auto-style12 {
-            width: 70%;
+            width: 96%;
         }
         .auto-style16 {
             width: 23%;
         }
         .auto-style17 {
             width: 27%;
-        }
-        .auto-style18 {
-            width: 28%;
+            padding-right:2%;
         }
         .button-add {
     float: right;
@@ -143,6 +143,12 @@
     font-weight: bold;
     cursor: pointer;
 }
+        .auto-style18 {
+            width: 22%;
+        }
+        .headerdatalist{
+            padding-left:7%;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -178,23 +184,37 @@
                         <asp:QueryStringParameter Name="MaDN" QueryStringField="MaDN" />
                     </SelectParameters>
                 </asp:SqlDataSource>
-                <br /><table class="auto-style12"><tr><td class="auto-style17"> <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Thông tin sinh viên"></asp:Label></td><td class="auto-style16"><asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Ngày nộp hồ sơ"></asp:Label></td><td class="auto-style18"><asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Thông tin cá nhân"></asp:Label></td><td style="width:70%;">   <asp:Label ID="Label8" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Trạng thái tuyển dụng"></asp:Label></td></tr></table><br /><asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource_DuyetSV" BackColor="#FFD6C2" OnItemCommand="DataList1_ItemCommand" Width="70%" BorderColor="Silver" BorderWidth="3px" GridLines="Horizontal" OnItemDataBound="DataList1_ItemDataBound"><ItemTemplate>
-                        <br />
-                        <table class="auto-style1">
+                <br />
+                <table class="auto-style12"><tr>
+                    <td class="auto-style17">  
+                        <div class="headerdatalist">
+                        <asp:Label ID="Label5" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Thông tin sinh viên">
+
+                        </asp:Label></td><td class="auto-style16" style="padding-left:4%">
+                            <asp:Label ID="Label6" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Ngày nộp hồ sơ"></asp:Label></td><td class="auto-style18" style="">
+                        <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Thông tin cá nhân"></asp:Label></td><td style="width:100%;padding-left:3%">   
+                        <asp:Label ID="Label8" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="14pt" Text="Trạng thái tuyển dụng"></asp:Label></td></tr></table><br />
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource_DuyetSV" BackColor="#FFD6C2" OnItemCommand="DataList1_ItemCommand" Width="90%" BorderColor="Silver" BorderWidth="3px" GridLines="Horizontal" OnItemDataBound="DataList1_ItemDataBound">
+                            <ItemTemplate>
+                               <div style="height:100px">
+                      
+                            <br />
+                        <table class="auto-style1" style="height:40%">
                             <tr>
-                                <td class="auto-style6">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="TenSVLabel" runat="server" Text='<%# Eval("TenSV") %>' Font-Names="Arial" Font-Size="13pt" /></td>
-                                <td rowspan="2" class="auto-style9">&nbsp;</td><td class="auto-style6">
+                                <td class="auto-style6" style="height:40%">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="TenSVLabel" runat="server" Text='<%# Eval("TenSV") %>' Font-Names="Arial" Font-Size="13pt" Width="180px" />
+                                </td>
+                                <td rowspan="2" class="auto-style9"style="height:40%">&nbsp;</td><td class="auto-style6" style="height:40%">
                                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("NGAY", "{0: dd/MM/yyyy}") %>' Font-Names="Arial" Font-Size="13pt"></asp:Label></td><td rowspan="2" class="auto-style9"></td>
                                 <td class="auto-style7">
-                                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#0066FF" NavigateUrl='<%# "CNDOANHNGHIEP_TTSV.aspx?MaSV="+Eval("MaSV", "{0}") %>' Font-Names="Arial" Font-Size="13pt">Xem thông tin cá nhân</asp:HyperLink></td><td rowspan="2" class="auto-style10"></td>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#0066FF"  NavigateUrl='<%# "CNDOANHNGHIEP_TTSV.aspx?MaSV="+Eval("MaSV", "{0}") %>' Font-Names="Arial" Font-Size="13pt">Xem thông tin cá nhân</asp:HyperLink></td><td rowspan="2" class="auto-style10"></td>
                                 <td class="auto-style6">
                                     <div class="buttongroup">
                                         <div class="auto-style11">
-                                        <asp:Button ID="DuyetSV" runat="server"  Text="Duyệt hồ sơ" CommandName="duyetsv" CssClass="button-add"/></div></div></td></tr><tr>
+                                        <asp:Button ID="DuyetSV" runat="server"  Text="Duyệt hồ sơ" CommandName="duyetsv" CssClass="button-add" on/></div></div></td></tr><tr>
                                                 
                                 <td>
-                                    <asp:Label ID="MaSVLabel" runat="server" Text='<%# Eval("MaSV") %>' Visible="False" Font-Names="Arial" Font-Size="13pt"></asp:Label></td><td>&nbsp;</td><td class="auto-style8">&nbsp;</td><td>&nbsp;</td></tr></table><br /></ItemTemplate></asp:DataList><br />
+                                    <asp:Label ID="MaSVLabel" runat="server" Text='<%# Eval("MaSV") %>' Visible="False" Font-Names="Arial" Font-Size="13pt"></asp:Label></td><td>&nbsp;</td><td class="auto-style8">&nbsp;</td><td>&nbsp;</td></tr></table><br /></div></ItemTemplate></asp:DataList><br />
             </td>
         </tr>
         <tr>

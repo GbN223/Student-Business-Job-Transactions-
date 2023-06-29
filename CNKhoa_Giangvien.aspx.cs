@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Net.Mail;
 using System.Net;
-using System.Reflection.Emit;
-using System.Web;
-using System.Web.UI;
+using System.Net.Mail;
 using System.Web.UI.WebControls;
 using Label = System.Web.UI.WebControls.Label;
 
@@ -17,12 +13,12 @@ namespace NCKH
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         protected void tbxTimGV_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnThemGV_Click(object sender, EventArgs e)
@@ -32,7 +28,7 @@ namespace NCKH
 
         protected void btnTimGV_Click(object sender, EventArgs e)
         {
-            DataList_GV.Visible= false;
+            DataList_GV.Visible = false;
             DataList_GVTK.DataBind();
         }
 
@@ -86,7 +82,7 @@ namespace NCKH
                     lblError.Text = ex.Message;
                 }
             }
-            else if(e.CommandName == "huythamgia")
+            else if (e.CommandName == "huythamgia")
             {
                 try
                 {
@@ -100,18 +96,19 @@ namespace NCKH
                     btnHuy.Enabled = false;
                     btnHuy.BackColor = Color.Brown;
                 }
-                catch(Exception ex) {
+                catch (Exception ex)
+                {
                     lblError.Text = ex.Message;
                 }
             }
             else if (e.CommandName == "sua")
             {
                 lblError.Text = "" + MAGV;
-                Response.Redirect("~\\CNKhoa_GVTTCT.aspx?Update=sua&MaGV="+MAGV+"");
+                Response.Redirect("~\\CNKhoa_GVTTCT.aspx?Update=sua&MaGV=" + MAGV + "");
             }
             else if (e.CommandName == "xoa")
             {
-                
+
             }
         }
         private void sendMail()
@@ -124,7 +121,7 @@ namespace NCKH
                 mailMessage.From = new MailAddress("baoathlean@gmail.com");
                 mailMessage.To.Add(new MailAddress("baoathlean@gmail.com"));
                 mailMessage.Subject = "Thông báo hướng dẫn thực tập";
-                mailMessage.Body = "Khoa công nghệ thông tin xin trân trọng thông báo thầy cô đã được chọn hướng dẫn thực tập cho đợt III năm 2022";
+                mailMessage.Body = "Khoa công nghệ thông tin xin trân trọng thông báo thầy cô đã được mời hướng dẫn thực tập cho đợt III năm 2022";
 
                 // create a new SmtpClient object
                 SmtpClient smtpClient = new SmtpClient();
@@ -188,12 +185,12 @@ namespace NCKH
         }
         protected void DataList_GVTK_ItemDataBound(object sender, DataListItemEventArgs e)
         {
-            
+
         }
 
         protected void DataList_GVTK_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            
+
         }
 
         protected void DataList_GV_ItemDataBound(object sender, DataListItemEventArgs e)
@@ -206,14 +203,14 @@ namespace NCKH
                 DataListItem dataListItem = e.Item as DataListItem;
                 Button btnDangky = dataListItem.FindControl("btnThamgia") as Button;
                 Button btnHuy = dataListItem.FindControl("btnHuy") as Button;
-             
+
                 if (GetDataChonGV(MaGV) > 0)
                 {
                     btnDangky.Text = "Đã tham gia";
                     btnDangky.Enabled = false;
                     btnDangky.BackColor = Color.Brown;
                     lblError.Text = "" + GetDataChonGV(MaGV);
-                    btnHuy.BackColor = System.Drawing.ColorTranslator.FromHtml("#D85121") ;
+                    btnHuy.BackColor = System.Drawing.ColorTranslator.FromHtml("#D85121");
                     btnHuy.Enabled = true;
                 }
                 else
@@ -224,6 +221,6 @@ namespace NCKH
             }
         }
 
-        
+
     }
 }

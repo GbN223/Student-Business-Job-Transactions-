@@ -123,7 +123,7 @@ namespace NCKH
                 Button btnDangky = dataListItem.FindControl("DuyetSV") as Button;
                 if (GetDataDangkyDN(MaSV, MaDN) > 0)
                 {
-                    btnDangky.Text = "Đã đăng ký";
+                    btnDangky.Text = "Đã duyệt";
                     btnDangky.Enabled = false;
                     btnDangky.BackColor = System.Drawing.Color.Black;
                 }

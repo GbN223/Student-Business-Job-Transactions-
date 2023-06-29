@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace NCKH
 {
@@ -19,11 +12,11 @@ namespace NCKH
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
-           
-            if (checkLoginSV(iuser.Text, ipass.Text)>0 && RadioButton1.Checked)
+
+
+            if (checkLoginSV(iuser.Text, ipass.Text) > 0 && RadioButton1.Checked)
             {
-                Response.Redirect("~\\CNSinhvien_Dangkydn.aspx?MaSV="+ iuser.Text + "");
+                Response.Redirect("~\\CNSinhvien_Dangkydn.aspx?MaSV=" + iuser.Text + "");
             }
             else if (iuser.Text.Trim() == "DN01" && ipass.Text.Trim() == "123" && RadioButton2.Checked)
             {
@@ -36,10 +29,10 @@ namespace NCKH
             else if (iuser.Text.Trim() == "GV01" && ipass.Text.Trim() == "123" && RadioButton3.Checked)
             {
                 Response.Redirect("~\\CNGIANGVIEN_HDTT.aspx?MaGV=GV01");
-                
+
             }
-            }
-        private int checkLoginSV(String MaSV,String MATKHAU)
+        }
+        private int checkLoginSV(String MaSV, String MATKHAU)
         {
             int count = 0;
             string connectionString = "Data Source=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com;Initial Catalog=1G05NguyenChiBaoDangkykhoahoc;Persist Security Info=False;User ID=pop123_SQLLogin_1;Password=6f6yctis21;Packet Size=4096;Workstation ID=1G05NguyenChiBaoDangkykhoahoc.mssql.somee.com";
@@ -53,14 +46,14 @@ namespace NCKH
                     {
                         command.Parameters.AddWithValue("@username", MaSV);
                         command.Parameters.AddWithValue("@password", MATKHAU);
-                         count = Convert.ToInt32(command.ExecuteScalar());
-                        
+                        count = Convert.ToInt32(command.ExecuteScalar());
+
                     }
                 }
                 catch (Exception ex)
                 {
                     // show an error message
-                    
+
                 }
             }
             return count;

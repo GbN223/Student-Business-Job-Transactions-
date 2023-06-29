@@ -1,5 +1,9 @@
 ﻿body {
 }
+.row-3{
+    width:100%;
+    padding-left:30%;
+}
 .button-duyet {
     width: 150px;
     height: 40px;
